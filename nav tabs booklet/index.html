@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script defer src="https://unpkg.com/@alpinejs/persist@3.x.x/dist/cdn.min.js"></script>
+  <script defer src="https://unpkg.com/alpinejs@3.9.0/dist/cdn.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>booklet</title>
+</head>
+<body>
+  <main class="mx-auto">
+    <div x-data="{currentTab: $persist(1)}" class="max-w-md min-h-[30rem] my-10 mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
+      <div class="md:flex ">
+        <div class="md:shrink-0">
+          <div class="grid gird-cols-1 grid-rows-3" > <!-- tab menu --> 
+          
+            <a href="#" @click.prevent="currentTab = '1'"  class="border-t-2 border-r-2 py-2 px-5" >cover</a>
+            <a href="#"@click.prevent="currentTab = '2'" class="border-t-2 border-r-2 py-2 px-5">sumary</a>
+            <a href="#"@click.prevent="currentTab = '3'" class="border-t-2 border-r-2 py-2 px-5">texts</a>
+    
+          </div><!-- end tab menu -->
+        </div>
+        <div class="p-8">
+        
+          <div x-show="currentTab === '1' " ><!-- cover div -->
+            <h1>hello world</h1>
+         
+            <p>Lorem Ipsum is simply dummy text of the printing.</p>
+  
+            </div><!-- end cover div -->
+  
+            <div x-show="currentTab === '2'"><!-- sumary div -->
+          
+            <p>Lorem Ipsum is simply dummy text of <br> the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like <br> Aldus PageMaker including versions of Lorem Ipsum</p>
+          
+            </div><!-- end sumary div -->
+  
+            <div x-show="currentTab === '3'"><!-- texts div -->
+  
+              <p>           
+              Lorem Ipsum is simply dummy text of the printing Lorem Ipsum is simply dummy text of the printing.</p>
+  
+              </div><!-- end texts div -->
+      </div>
+    </div>
+  
+  </main>
+</body>
+</html>
