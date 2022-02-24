@@ -1,9 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+  <!-- CDN alpine.js -->
   <script defer src="https://unpkg.com/@alpinejs/persist@3.x.x/dist/cdn.min.js"></script>
   <script defer src="https://unpkg.com/alpinejs@3.9.0/dist/cdn.min.js"></script>
+   <!-- END CDN alpine.js -->
+   <!-- CDN tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- END CDN tailwind -->
+  <!-- CDN libs: sound, min - p5.js -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/p5.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/addons/p5.sound.min.js"></script>
+   <!-- End CDN libs: sound, min - p5.js -->
+  <script src="sketch.js"></script> <!-- p5.js sketch.js file -->
+
+
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +23,7 @@
 </head>
 <body>
   <main class="mx-auto">
-    <div x-data="{currentTab: $persist(1)}" class="max-w-md min-h-[30rem] my-10 mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
+    <div x-data="{currentTab: $persist(1)}" class="max-w-md min-h-[30rem] my-10 mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-[60rem]">
       <div class="md:flex ">
         <div class="md:shrink-0">
           <div class="grid gird-cols-1 grid-rows-3" > <!-- tab menu --> 
@@ -24,7 +36,7 @@
         </div>
         <div class="p-8">
         
-          <div x-show="currentTab === '1' " ><!-- cover div -->
+          <div id="myContainer" x-show="currentTab === '1' " ><!-- cover div -->
             <h1>hello world</h1>
          
             <p>Lorem Ipsum is simply dummy text of the printing.</p>
